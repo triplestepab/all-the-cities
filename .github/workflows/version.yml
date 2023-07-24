@@ -17,5 +17,3 @@ jobs:
       - run: git config --global user.email 'contact@triplestep.se'
       - run: npm version patch -m "[RELEASE] %s" # Bump version number in package.json (including committing to git)
       - run: git push # Allowed to push to repository because of "permissions" above
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
