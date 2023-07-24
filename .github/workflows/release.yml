@@ -7,13 +7,15 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - run: npm ci --only=production
-      - run: npm version patch # Bump version number in package.json (including committing to git)
+      - run: npm ci
+      - run: npm run clean
+      - run: npm run build
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}

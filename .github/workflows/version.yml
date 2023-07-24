@@ -1,0 +1,16 @@
+name: Version Increment
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"  # On each commit, bump version (unless commit message starts with "[RELEASE]")
+    steps:
+      - uses: actions/checkout@v3
+      - run: git config --global user.name 'TripleStep AB'
+      - run: git config --global user.email 'contact@triplestep.se'
+      - run: npm version patch -m "[RELEASE] %s" # Bump version number in package.json (including committing to git)
+      - run: git push          
