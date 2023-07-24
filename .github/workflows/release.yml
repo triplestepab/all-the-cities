@@ -7,16 +7,16 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
+    if: "startsWith(github.event.head_commit.message, '[RELEASE]')"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3 # Uses "GITHUB_TOKEN"
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
       - run: npm ci
       - run: npm run clean
       - run: npm run build
-      - uses: JS-DevTools/npm-publish@v2
+      - uses: JS-DevTools/npm-publish@v2 # Uses "NPM_TOKEN"
         with:
           token: ${{ secrets.NPM_TOKEN }}
           # dry-run: true
