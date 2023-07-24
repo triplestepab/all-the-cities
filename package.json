@@ -1,0 +1,35 @@
+{
+	"name": "@triplestep/all-the-cities",
+	"author": {
+		"name": "Tomas Nilsson",
+		"email": "contact@triplestep.se"
+	},
+	"version": "1.0.0",
+	"private": true,
+	"license": "MIT",
+	"main": "bin/index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "node --inspect --es-module-specifier-resolution=node ./bin/index.js",
+		"build": "./node_modules/.bin/tsc -b -v",
+		"clean": "./node_modules/.bin/rimraf ./src/**/bin ./bin ./src/**/tsconfig.tsbuildinfo tsconfig.tsbuildinfo",
+		"rebuild": "npm run clean && npm run build",
+		"build:diag": "./node_modules/.bin/tsc -b -v -w --preserveWatchOutput -watch --extendedDiagnostics",
+		"lint": "./node_modules/.bin/eslint --ext .ts,.tsx .",
+		"tsc-watch": "./node_modules/.bin/tsc-watch -b -v -i -w --noclear --compiler \"./node_modules/.bin/tsc\" --onSuccess \"node --inspect --es-module-specifier-resolution=node ./bin/index.js\""
+	},
+	"devDependencies": {
+		"@types/eslint": "^8.44.0",
+		"@types/node": "^20.4.4",
+		"@typescript-eslint/eslint-plugin": "^6.1.0",
+		"@typescript-eslint/parser": "^6.1.0",
+		"eslint": "^8.45.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-next": "^13.4.12",
+		"eslint-plugin": "^1.0.1",
+		"eslint-plugin-dprint-integration": "^0.3.0",
+		"eslint-plugin-import": "^2.27.5",
+		"tsc-watch": "^6.0.4",
+		"typescript": "^5.1.6"
+	}
+}
