@@ -12,9 +12,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - run: npm ci
+      - run: npm ci --only=production
+      - run: npm version patch # Bump version number in package.json (including committing to git)
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          dry-run: true
+          # dry-run: true
           
