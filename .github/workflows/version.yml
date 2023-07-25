@@ -10,10 +10,10 @@ permissions:
 jobs:
   version:
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"  # On each commit, bump version (unless commit message starts with "[RELEASE]")
+    if: "startsWith(github.event.head_commit.message, '[PATCH]')"  # On each commit, bump version (unless commit message starts with "[RELEASE]")
     steps:
       - uses: actions/checkout@v3 # Uses "GITHUB_TOKEN"
       - run: git config --global user.name 'TripleStep AB'
       - run: git config --global user.email 'contact@triplestep.se'
-      - run: npm version patch -m "[RELEASE] %s" # Bump version number in package.json (including committing to git)
+      - run: npm version patch -m "[PATCH] %s" # Bump version number in package.json (including committing to git)
       - run: git push # Allowed to push to repository because of "permissions" above
