@@ -1,4 +1,4 @@
-# @triplestep/all-the-cities
+# @triplestepab/all-the-cities
 
 This package contains all the cities with population, gps coordinates and (to some degree) alternative spellings for the following countries:
 
@@ -12,7 +12,7 @@ The data comes from geonames.org. For a list of countries, see <http://download.
 ## Sample code
 
 ```typescript
-	import * as allTheCities from "@triplestep/all-the-cities";
+	import * as allTheCities from "@triplestepab/all-the-cities";
 
 	// ****************************************************
 	// Find two cities and calculate distance between them
@@ -76,7 +76,7 @@ The data was sorted using:
 
 ## Notes on memory usage
 
-Upon searching a country, the file for that requested country is loaded into memory and kept there. Upon searching all countries, there's a good chance the memory footprint is huge (The `countryData` folder is over 800Mb on disk).
+Upon searching a country, the file for that requested country is loaded into memory and kept there. Upon searching all countries, there's a good chance the memory footprint is huge (The `countryData` folder is some 500Mb on disk).
 
 # Thanks to (including license info)
 
