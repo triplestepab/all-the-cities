@@ -17,12 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3 # Uses "GITHUB_TOKEN"
       - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
       - run: git config --global user.name 'TripleStep AB'
       - run: git config --global user.email 'contact@triplestep.se'
       - run: npm version patch -m "[RELEASE] %s" # Bump version number in package.json (including committing to git)
       - run: git push # Allowed to push to repository because of "permissions" above
-        with:
-          node-version: "18"
       - run: npm ci
       - run: npm run clean
       - run: npm run build
