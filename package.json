@@ -9,7 +9,7 @@
 	"main": "bin/index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "node --inspect --es-module-specifier-resolution=node ./bin/index.js",
+		"dev": "./node_modules/.bin/tsc -b -v && node --inspect --es-module-specifier-resolution=node ./bin/index.js",
 		"build": "./node_modules/.bin/tsc -b -v",
 		"clean": "./node_modules/.bin/rimraf ./src/**/bin ./bin ./src/**/tsconfig.tsbuildinfo tsconfig.tsbuildinfo",
 		"rebuild": "npm run clean && npm run build",

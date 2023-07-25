@@ -8,12 +8,10 @@ export type Code = typeof cityFeatureCodes[number];
 export type City = {
 	id: number;
 	name: string;
-	search: string[];
-	Long: Longitude;
-	Lat: Latitude;
-	code: Code;
-	population: number;
-	timezone: string;
+	alt: string[] | undefined;
+	lon: Longitude;
+	lat: Latitude;
+	pop: number; // Short names in order to save disk space
 };
 
 export type Country = typeof countryList[number];

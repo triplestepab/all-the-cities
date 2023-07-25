@@ -46,5 +46,5 @@ export function Sample(): void {
 	// ****************************************************
 
 	const allCities = allTheCities.getData("SE");
-	console.log(allCities.filter(c => c.population > 100000).sort((c1, c2) => c2.population - c1.population).map(c => c.name));
+	console.log(allCities.filter(c => c.pop > 100000).sort((c1, c2) => c2.pop - c1.pop).map(c => c.name));
 }

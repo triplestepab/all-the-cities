@@ -34,7 +34,7 @@ export function getDataWithDistanceMeters(iCountry: Country, lat1: Latitude, lon
 
 	const result = data.map(c => ({
 		...c,
-		DistanceMeters: distance(lat1, lon1, c.Lat, c.Long),
+		DistanceMeters: distance(lat1, lon1, c.lat, c.lon),
 	}));
 
 	return result;
@@ -49,7 +49,10 @@ export function findCity(iCountry: Country, iName: string, iMatchType: "Exact" |
 		case "Substring":
 			return data.filter(c => c.name.toLocaleLowerCase().includes(iName.toLocaleLowerCase()));
 		case "Alternative":
-			return data.filter(c => c.search.some(s => s.toLocaleLowerCase().includes(iName.toLocaleLowerCase())));
+			return data.filter(c =>
+				c.name.toLocaleLowerCase().includes(iName.toLocaleLowerCase())
+				|| c.alt?.some(s => s.toLocaleLowerCase().includes(iName.toLocaleLowerCase()))
+			);
 	}
 }
 
@@ -65,7 +68,7 @@ export function findNearestCities(iCountry: Country, lat1: Latitude, lon1: Longi
 }
 
 export function distanceBetweenCities(city1: City, city2: City): number {
-	return distance(city1.Lat, city1.Long, city2.Lat, city2.Long);
+	return distance(city1.lat, city1.lon, city2.lat, city2.lon);
 }
 
 /**
