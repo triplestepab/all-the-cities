@@ -9,7 +9,7 @@
     "main": "bin/index.js",
     "type": "module",
     "scripts": {
-        "dev": "./node_modules/.bin/tsc -b -v && node --inspect --es-module-specifier-resolution=node ./bin/index.js",
+        "dev": "./node_modules/.bin/tsc -b -v && node --inspect ./bin/index.js",
         "build": "./node_modules/.bin/tsc -b -v",
         "clean": "./node_modules/.bin/rimraf ./src/**/bin ./bin ./src/**/tsconfig.tsbuildinfo tsconfig.tsbuildinfo",
         "rebuild": "npm run clean && npm run build",
@@ -18,12 +18,12 @@
         "tsc-watch": "./node_modules/.bin/tsc-watch -b -v -i -w --noclear --compiler \"./node_modules/.bin/tsc\" --onSuccess \"node --inspect --es-module-specifier-resolution=node ./bin/index.js\""
     },
     "devDependencies": {
-        "@types/node": "^22.8.2",
-        "tsc-watch": "^6.2.0",
-        "typescript": "^5.6.3",
-        "@typescript-eslint/eslint-plugin": "^8.12.1",
-        "@typescript-eslint/parser": "^8.12.1",
-        "eslint": "^9.13.0",
-        "typescript-eslint": "^8.12.1"
+        "@types/node": "^24.9.2",
+        "@typescript-eslint/eslint-plugin": "^8.46.2",
+        "@typescript-eslint/parser": "^8.46.2",
+        "eslint": "^9.39.0",
+        "tsc-watch": "^7.2.0",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.46.2"
     }
 }
