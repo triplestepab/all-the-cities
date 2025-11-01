@@ -1,6 +1,6 @@
-import * as allTheCities from ".";
+import * as allTheCities from "./index.js";
 
-export function Sample(): void {
+export function runSample(): void {
 	// ****************************************************
 	// Find two cities and calculate distance between them
 	// ****************************************************

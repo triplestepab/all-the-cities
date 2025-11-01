@@ -2,7 +2,7 @@ import events from "events";
 import * as fs from "fs";
 import * as path from "path";
 import readline from "readline";
-import { citiesOnly, City } from "./types";
+import { citiesOnly, City } from "./types.js";
 
 /*
 

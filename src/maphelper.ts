@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { City, Country } from "./types";
+import { City, Country } from "./types.js";
 
 const mapdata: {
     [county in Country]: City[];

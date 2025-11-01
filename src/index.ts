@@ -1,10 +1,10 @@
-export * as geonamesParser from "./geonamesParser";
-export * from "./maphelper";
+export * as geonamesParser from "./geonamesParser.js";
+export * from "./maphelper.js";
 
-// import * as samppleCode from "./sampleCode";
-// samppleCode.Sample();
+// import * as samppleCode from "./sampleCode.js";
+// samppleCode.runSample();
 
-// import * as geonamesParser from "./geonamesParser";
+// import * as geonamesParser from "./geonamesParser.js";
 // const path = "allCountries.txt";
-// const destinationFolder = "./countryData";
+// const destinationFolder = "./countryData.js";
 // geonamesParser.extractCitiesData(path, destinationFolder);
