@@ -11,7 +11,8 @@
     "allowJs": true,
     "moduleResolution": "node16",
     "types": [
-      "node"
+      "node",
+      "mocha"
     ],
     "lib": [
       "DOM",
@@ -30,8 +31,7 @@
     "declarationMap": true
   },
   "include": [
-    "src/**/*.ts",
-    "test/*.test.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",
